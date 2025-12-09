@@ -7,11 +7,12 @@ import Games from "./_components/games";
 import { sanityFetch } from "@/sanity/lib/live";
 import { gamesCategoryQuery, gamesQuery } from "@/sanity/lib/queries";
 import { GamesCategoryQueryResult, GamesQueryResult } from "@/sanity.types";
-import Footer from "./_components/footer";
+import MobileFooter from "./_components/mobileFooter";
 
 const HomePage = async () => {
   const {data: gamesData} = await sanityFetch<NonNullable<GamesQueryResult>>({query: gamesQuery})
   const {data: gamesCategories} = await sanityFetch<NonNullable<GamesCategoryQueryResult>>({query: gamesCategoryQuery})
+
   return (
     <div className="relative overflow-hidden">
       <BackgroundImage className="absolute -z-2" />
@@ -25,7 +26,7 @@ const HomePage = async () => {
             <EarnCoin />
             <CategoryCard categories={gamesCategories}/>
             <Games games={gamesData}/>
-            <Footer/>
+            <MobileFooter/>
           </div>
         </div>
       </div>

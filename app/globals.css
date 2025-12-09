@@ -3,19 +3,34 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
 @theme {
   --font-roboto: var(--font-roboto);
 
   --color-secondery: #888888;
   --color-border-color: #e6e7e8;
+  --color-text-blue: #0b70d8;
   --color-btn-bg: #1877f2;
   --color-theme-Green: #14903e;
   --color-btn-text-color: #f4f4f8;
+  --color-gradient-blue: #1877f2f0;
+  --color-brand-pure-white: #fff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-gradient-blue: var(--gradient-blue);
+  --color-brand-pure-white: var(--brand-pure-white);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -86,6 +101,10 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --gradient-blue: #1877f2f0;
+  --brand-pure-white: #fff;
+
+  --bg-gradient: linear-gradient(25deg, var(--color-gradient-blue) 10%, var(--color-brand-pure-white) 45%);
 }
 
 .dark {
@@ -120,6 +139,14 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+.max-width-container{
+  @apply mx-auto max-w-[1440px];
+}
+
+.padding-container{
+  @apply px-4 md:px-10 lg:px-25;
 }
 
 @layer base {

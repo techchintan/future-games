@@ -56,8 +56,8 @@ export async function recentlyPlayed() {
   }
 }
 
-export const popularGamesQuery =
-  defineQuery(`*[_type == "game" && is_active == true && !(_id in path('drafts.**'))]| order(orderRank){
+export const recentGamesQuery =
+  defineQuery(`*[_type == 'game' && is_active == true && !(_id in path('drafts.**'))] | order(created_at){
         _id,
         title,
         description,
@@ -68,7 +68,21 @@ export const popularGamesQuery =
           asset ->
         }
         },
-      }[0...6]`);
+      }[0...5]`);
+
+export const popularGamesQuery =
+  defineQuery(`*[_type == "game" && is_active == true && !(_id in path('drafts.**'))]| order(rating desc){
+        _id,
+        title,
+        description,
+        game_slug,
+        badge,
+        thumbnail{
+          ...thumbnail{
+          asset ->
+        }
+        },
+      }[0...5]`);
 
 export async function searchGame(value: any) {
   try {

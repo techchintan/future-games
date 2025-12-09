@@ -1,4 +1,4 @@
-const Footer = () => {
+const MobileFooter = () => {
   return (
     <div>
       <div className="text-secondery flex flex-col items-center gap-4 p-4">
@@ -25,4 +25,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default MobileFooter;

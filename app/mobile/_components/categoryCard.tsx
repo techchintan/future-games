@@ -5,7 +5,6 @@ import {GamesCategoryQueryResult} from "@/sanity.types";
 import {} from "@/sanity/lib/queries";
 
 const CategoryCard = async ({categories}: {categories: NonNullable<GamesCategoryQueryResult>}) => {
-  console.log(categories);
   return (
     <div className="p-4">
       <Card className="shadow-none">
