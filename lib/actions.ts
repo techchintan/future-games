@@ -2,7 +2,7 @@
 
 import {searchGame} from "@/sanity/lib/queries";
 
-export async function searchGameResult(searchInput: string) {
+export async function searchGameByName(searchInput: string) {
   if (!searchInput.trim()) {
     return null;
   }

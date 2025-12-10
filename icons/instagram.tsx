@@ -23,4 +23,4 @@ const InstagramIcon = ({className}: {className?: string}) => {
   );
 };
 
-export default InstagramIcon
+export default InstagramIcon;

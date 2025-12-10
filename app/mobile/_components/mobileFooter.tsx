@@ -17,7 +17,7 @@ const MobileFooter = () => {
           the way!
         </p>
       </div>
-      <div className="border-t border-border-color flex justify-between p-2">
+      <div className="border-border-color flex justify-between border-t p-2">
         <p>Privacy Policy</p>
         <p>pokiigame.com</p>
       </div>

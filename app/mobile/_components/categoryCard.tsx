@@ -10,9 +10,12 @@ const CategoryCard = async ({categories}: {categories: NonNullable<GamesCategory
       <Card className="shadow-none">
         <CardContent className="flex flex-col gap-2">
           <p className="text-center">Pick game categories which you enjoy more!</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
             {categories.map((category) => (
-              <Button key={category._id} className="rounded-full h-11 tracking-[1px] bg-white text-black text-sm font-semibold border border-btn-bg hover:bg-btn-bg hover:text-white cursor-pointer">
+              <Button
+                key={category._id}
+                className="border-btn-bg hover:bg-btn-bg h-11 cursor-pointer rounded-full border bg-white text-sm font-semibold tracking-[1px] text-black hover:text-white"
+              >
                 <SanityImage
                   src={category.thumbnail}
                   alt={category.title || ""}

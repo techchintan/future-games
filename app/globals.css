@@ -104,7 +104,11 @@
   --gradient-blue: #1877f2f0;
   --brand-pure-white: #fff;
 
-  --bg-gradient: linear-gradient(25deg, var(--color-gradient-blue) 10%, var(--color-brand-pure-white) 45%);
+  --bg-gradient: linear-gradient(
+    25deg,
+    var(--color-gradient-blue) 10%,
+    var(--color-brand-pure-white) 45%
+  );
 }
 
 .dark {
@@ -141,11 +145,11 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-.max-width-container{
+.max-width-container {
   @apply mx-auto max-w-[1440px];
 }
 
-.padding-container{
+.padding-container {
   @apply px-4 md:px-10 lg:px-25;
 }
 
@@ -156,4 +160,33 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@keyframes btnAnimation {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+.earn-coin-btn:after,
+.earn-coin-btn:before {
+  content: "";
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: -150%;
+  height: 100%;
+  width: 8%;
+  background: linear-gradient(
+    120deg,
+    hsla(0, 0%, 100%, 0),
+    hsla(0, 0%, 100%, 0.1) 50%,
+    hsla(0, 0%, 100%, 0)
+  );
+  animation: btnAnimation 2s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
 }

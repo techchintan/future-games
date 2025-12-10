@@ -1,4 +1,4 @@
-const SearchIcon = ({className, color}: {className?: string, color?:string}) => {
+const SearchIcon = ({className, color}: {className?: string; color?: string}) => {
   return (
     <svg width="13" className={className} height="13" viewBox="0 0 13 13">
       <title>search</title>

@@ -1,4 +1,4 @@
-const BackgroundImage = ({className}: {className: string}) => {
+const BackgroundImage = ({className}: {className?: string}) => {
   return (
     <svg
       width="1920"

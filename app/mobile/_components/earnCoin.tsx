@@ -17,7 +17,7 @@ const EarnCoin = () => {
           <span className="font-semibold">0</span>
         </CardHeader>
         <CardContent className="p-0">
-          <Button className="bg-btn-bg tracking-[1px] h-11 cursor-pointer hover:bg-btn-bg w-full rounded-full">
+          <Button className="bg-btn-bg hover:bg-btn-bg h-11 w-full cursor-pointer rounded-full tracking-[1px]">
             <Image src="/coin.png" alt="coin" width={24} height={24} />
             <span className="text-white uppercase">Earn free coins</span>
           </Button>

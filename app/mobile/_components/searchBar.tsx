@@ -4,7 +4,7 @@ import SearchIcon from "@/icons/serachIcon";
 import {GamesQueryResult} from "@/sanity.types";
 import {useEffect, useState} from "react";
 import Games from "./games";
-import {searchGameResult} from "@/lib/actions";
+import {searchGameByName} from "@/lib/actions";
 
 const SearchBar = () => {
   const [searchInput, setSearchInput] = useState<string>("");
@@ -12,8 +12,8 @@ const SearchBar = () => {
 
   useEffect(() => {
     async function fetchData() {
-        const response = await searchGameResult(searchInput);
-        setSearchResult(response); 
+      const response = await searchGameByName(searchInput);
+      setSearchResult(response);
     }
     const timer = setTimeout(() => fetchData(), 300);
     return () => clearTimeout(timer);
@@ -42,9 +42,11 @@ const SearchBar = () => {
               <Games games={searchResult} />
             </div>
           ) : (
-            searchResult && <p className="px-4 text-center">
-              Sorry, no games found with this keyword... try something else
-            </p>
+            searchResult && (
+              <p className="px-4 text-center">
+                Sorry, no games found with this keyword... try something else
+              </p>
+            )
           )
         ) : null}
       </div>

@@ -11,6 +11,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-slot": "^1.2.4",
     "@sanity/image-url": "^1.2.0",
     "@sanity/orderable-document-list": "^1.4.0",
@@ -19,6 +20,7 @@
     "clsx": "^2.1.1",
     "cookies-next": "^6.1.1",
     "lucide-react": "^0.556.0",
+    "motion": "^12.23.25",
     "next": "16.0.7",
     "next-sanity": "11",
     "prettier": "^3.7.4",

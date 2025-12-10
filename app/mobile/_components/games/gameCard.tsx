@@ -6,14 +6,14 @@ import Image from "next/image";
 
 const GameCard = ({game}: {game: NonNullable<GamesQueryResult>[number]}) => {
   return (
-    <Card className="gap-0 overflow-hidden rounded-2xl p-0 border-border-color border outline-none shadow-none">
-      <div className="min-h-[175px] h-[175px]">
+    <Card className="border-border-color gap-0 overflow-hidden rounded-2xl border p-0 shadow-none outline-none">
+      <div className="h-[175px] min-h-[175px]">
         <SanityImage
           src={game.thumbnail}
           alt={game.title || ""}
           width={100}
           height={100}
-          className=" w-full h-full object-cover"
+          className="h-full w-full object-cover"
         />
       </div>
       <CardContent className="flex h-full flex-col items-center justify-between gap-1 p-2">
