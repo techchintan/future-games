@@ -2,6 +2,7 @@ import {GameBySlugQueryResult, GamesQueryResult} from "@/sanity.types";
 import {sanityFetch} from "@/sanity/lib/live";
 import {gameBySlugQuery, gamesQuery} from "@/sanity/lib/queries";
 import GameDetail from "./_components/gameDetail";
+import { notFound } from "next/navigation";
 
 const GamePage = async ({params}: {params: {slug: string}}) => {
   const {slug} = await params;
@@ -10,6 +11,9 @@ const GamePage = async ({params}: {params: {slug: string}}) => {
     params: {gameSlug: slug},
   });
   const {data: games} = await sanityFetch<NonNullable<GamesQueryResult>>({query: gamesQuery});
+  if(!gameData){
+      notFound()
+  }
   return (
     <div className="no-scrollbar">
       <GameDetail gameData={gameData} games={games} />

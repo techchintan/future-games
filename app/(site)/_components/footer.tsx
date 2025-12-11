@@ -67,7 +67,7 @@ const Footer = ({
             <InstagramIcon />
           </Link>
         </div>
-        <p className="text-sm">Copyright © {new Date().getFullYear()} qwikgames.com</p>
+        <p className="text-sm">Copyright © {new Date().getFullYear()} qwiqgames.com</p>
       </div>
     </div>
   );

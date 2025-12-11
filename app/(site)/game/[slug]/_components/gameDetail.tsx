@@ -19,13 +19,15 @@ const GameDetail = ({
         <div className="relative flex flex-col items-center gap-4 pt-8 pb-4">
           <BackgroundImage className="absolute top-0 z-0 h-full w-full object-cover" />
           <h1 className="z-1 text-center text-5xl font-semibold italic">{gameData.title}</h1>
-          <SanityImage
-            src={gameData.thumbnail}
-            alt={gameData.title || "game"}
-            width={200}
-            height={200}
-            className="border-border-color z-1 border object-cover"
-          />
+          {gameData.thumbnail && (
+            <SanityImage
+              src={gameData.thumbnail}
+              alt={gameData.title || "game"}
+              width={200}
+              height={200}
+              className="border-border-color z-1 border object-cover"
+            />
+          )}
           <Button className="bg-btn-bg hover:bg-btn-bg earn-coin-btn relative z-1 h-11 w-[300px] cursor-pointer overflow-hidden rounded-full tracking-[1px]">
             <span>Start Game</span>
           </Button>
