@@ -1,10 +1,12 @@
+import Link from "next/link";
+
 const MobileFooter = () => {
   return (
     <div>
       <div className="text-secondery flex flex-col items-center gap-4 p-4">
-        <h2 className="text-center text-2xl">About Pokiigame</h2>
+        <h2 className="text-center text-2xl">About Qwiqgames</h2>
         <p>
-          Play free games online at pokiigame.com and enjoy endless fun! Choose from a variety of
+          Play free games online at qwiqgames.com and enjoy endless fun! Choose from a variety of
           genres, including puzzle games, card games, adventure games, sports games, racing games,
           and car games.<br></br>
           Dive into the smooth gameplay of free HTML5 games online and create unforgettable
@@ -19,7 +21,7 @@ const MobileFooter = () => {
       </div>
       <div className="border-border-color flex justify-between border-t p-2">
         <p>Privacy Policy</p>
-        <p>pokiigame.com</p>
+        <Link href='/'>qwiqgames.com</Link>
       </div>
     </div>
   );

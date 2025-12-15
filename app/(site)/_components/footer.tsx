@@ -39,7 +39,11 @@ const Footer = ({
             <div className="flex flex-col gap-4">
               <h3 className="mb-2 text-xl font-semibold">Recent Games</h3>
               {recentGames.map((game) => (
-                <Link key={game._id} href="/" className="text-sm uppercase hover:underline">
+                <Link
+                  key={game._id}
+                  href={`/game/${game.game_slug?.current}` || "/"}
+                  className="text-sm uppercase hover:underline"
+                >
                   {game.title}
                 </Link>
               ))}
@@ -47,14 +51,20 @@ const Footer = ({
             <div className="flex flex-col gap-4">
               <h3 className="mb-2 text-xl font-semibold">Top Games</h3>
               {popularGames.map((game) => (
-                <Link key={game._id} href="/" className="text-sm uppercase hover:underline">
+                <Link
+                  key={game._id}
+                  href={`/game/${game.game_slug?.current}` || "/"}
+                  className="text-sm uppercase hover:underline"
+                >
                   {game.title}
                 </Link>
               ))}
             </div>
-            <Button className="bg-btn-bg hover:bg-btn-bg h-11 cursor-pointer rounded-full text-sm font-semibold tracking-[1px] text-white uppercase">
-              Contact Us
-            </Button>
+            <Link href='/contact-us'>
+              <Button className="bg-btn-bg hover:bg-btn-bg h-11 cursor-pointer rounded-full text-sm font-semibold tracking-[1px] text-white uppercase">
+                Contact Us
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

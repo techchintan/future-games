@@ -400,6 +400,41 @@ export type GamesQueryResult = Array<{
       }
     | null;
 }>;
+// Variable: gamesByCategoryQuery
+// Query: *[_type == "game" && is_active == true && !(_id in path('drafts.**')) && category == $gameCategory ]| order(orderRank){      _id,      title,      game_slug,      badge,      thumbnail{        ...thumbnail{          asset ->        }      },      }[0...120]
+export type GamesByCategoryQueryResult = Array<{
+  _id: string;
+  title: string | null;
+  game_slug: Slug | null;
+  badge: string | null;
+  thumbnail:
+    | {}
+    | {
+        asset: {
+          _id: string;
+          _type: "sanity.imageAsset";
+          _createdAt: string;
+          _updatedAt: string;
+          _rev: string;
+          originalFilename?: string;
+          label?: string;
+          title?: string;
+          description?: string;
+          altText?: string;
+          sha1hash?: string;
+          extension?: string;
+          mimeType?: string;
+          size?: number;
+          assetId?: string;
+          uploadId?: string;
+          path?: string;
+          url?: string;
+          metadata?: SanityImageMetadata;
+          source?: SanityAssetSourceData;
+        } | null;
+      }
+    | null;
+}>;
 // Variable: gameBySlugQuery
 // Query: *[_type == "game" && is_active == true && game_slug.current == $gameSlug && !(_id in path('drafts.**'))][0]{        _id,        title,        description,        game_slug,        game_url,        rating,        total_likes_in_percentage,        total_play_count,        faq,        developer_name,        genre,        category -> {          _id,          title,          slug,          thumbnail{            ...thumbnail{          asset ->        }          },          related_categories[]->{            ...,            thumbnail{              ...thumbnail{          asset ->        }            },          },        },        badge,        thumbnail{          ...thumbnail{          asset ->        }        },        is_active,        is_external,        seo,        "related_games":*[_type == "game" && is_active == true && !(_id in path('drafts.**')) && category._ref in (*[_type == "game" && is_active == true && game_slug.current == $gameSlug && !(_id in path('drafts.*'))][0]{          "related_categories" : (category->{    "ids" : related_categories[] -> {_id}["_id"]           })}["related_categories"]["ids"])]| order(orderRank){            _id,            title,            description,            game_slug,            badge,            thumbnail{              ...thumbnail{          asset ->        }            },          },      }
 export type GameBySlugQueryResult = {
@@ -676,6 +711,7 @@ declare module "@sanity/client" {
     "*[_type == \"game\" && is_active == true && !(_id in path('drafts.**'))]| order(rating desc){\n        _id,\n        title,\n        description,\n        game_slug,\n        badge,\n        thumbnail{\n          ...thumbnail{\n          asset ->\n        }\n        },\n      }[0...5]": PopularGamesQueryResult;
     "*[_type == \"gameCategory\" && is_active == true && !(_id in path('drafts.**'))] | order(orderRank)[0...4]{\n      _id,\n      title,\n      description,\n      thumbnail{\n        ...thumbnail{\n          asset ->\n        }\n      },\n      slug,\n      seo\n      }": GamesCategoryQueryResult;
     "*[_type == \"game\" && is_active == true && !(_id in path('drafts.**'))]| order(orderRank){\n      _id,\n      title,\n      game_slug,\n      badge,\n      thumbnail{\n        ...thumbnail{\n          asset ->\n        }\n      },\n      }[0...120]": GamesQueryResult;
+    "*[_type == \"game\" && is_active == true && !(_id in path('drafts.**')) && category == $gameCategory ]| order(orderRank){\n      _id,\n      title,\n      game_slug,\n      badge,\n      thumbnail{\n        ...thumbnail{\n          asset ->\n        }\n      },\n      }[0...120]": GamesByCategoryQueryResult;
     '*[_type == "game" && is_active == true && game_slug.current == $gameSlug && !(_id in path(\'drafts.**\'))][0]{\n        _id,\n        title,\n        description,\n        game_slug,\n        game_url,\n        rating,\n        total_likes_in_percentage,\n        total_play_count,\n        faq,\n        developer_name,\n        genre,\n        category -> {\n          _id,\n          title,\n          slug,\n          thumbnail{\n            ...thumbnail{\n          asset ->\n        }\n          },\n          related_categories[]->{\n            ...,\n            thumbnail{\n              ...thumbnail{\n          asset ->\n        }\n            },\n          },\n        },\n        badge,\n        thumbnail{\n          ...thumbnail{\n          asset ->\n        }\n        },\n        is_active,\n        is_external,\n        seo,\n        "related_games":*[_type == "game" && is_active == true && !(_id in path(\'drafts.**\')) && category._ref in (*[_type == "game" && is_active == true && game_slug.current == $gameSlug && !(_id in path(\'drafts.*\'))][0]{\n          "related_categories" : (category->{    "ids" : related_categories[] -> {_id}["_id"]\n           })}["related_categories"]["ids"])]| order(orderRank){\n            _id,\n            title,\n            description,\n            game_slug,\n            badge,\n            thumbnail{\n              ...thumbnail{\n          asset ->\n        }\n            },\n          },\n      }': GameBySlugQueryResult;
     '*[_type == "gameCategory" && is_active == true && slug.current == $categorySlug && !(_id in path(\'drafts.**\'))][0]{\n        _id,\n        title,\n        description,\n        thumbnail{\n          ...thumbnail{\n          asset ->\n        }\n        },\n        slug,\n        seo,\n        "related_categories":(related_categories[]->{\n          _id,\n        title,\n        thumbnail{\n          ...thumbnail{\n          asset ->\n        }\n        },\n        slug,\n        seo,\n        is_active\n        })[is_active == true],\n        "related_games": *[_type == "game" && is_active == true && !(_id in path(\'drafts.**\'))] | order(orderRank)[0...50]{\n          _id,\n          title,\n          description,\n          game_slug,\n          badge,\n          thumbnail{\n            ...thumbnail{\n          asset ->\n        }\n          }\n        }\n      }': CategoryBySlugQueryResult;
   }

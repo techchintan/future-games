@@ -133,6 +133,19 @@ export const gamesQuery =
       },
       }[0...120]`);
 
+export const gamesByCategoryQuery =
+  defineQuery(`*[_type == "game" && is_active == true && !(_id in path('drafts.**')) && category == $gameCategory ]| order(orderRank){
+      _id,
+      title,
+      game_slug,
+      badge,
+      thumbnail{
+        ...thumbnail{
+          asset ->
+        }
+      },
+      }`);
+
 export const gameBySlugQuery =
   defineQuery(`*[_type == "game" && is_active == true && game_slug.current == $gameSlug && !(_id in path('drafts.**'))][0]{
         _id,

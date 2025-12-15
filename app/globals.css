@@ -171,6 +171,15 @@
   }
 }
 
+@keyframes fade-in-out {
+  0%{
+    opacity: 100%;
+  }
+  100%{
+    opacity: 30%;
+  }
+}
+
 .earn-coin-btn:after,
 .earn-coin-btn:before {
   content: "";
