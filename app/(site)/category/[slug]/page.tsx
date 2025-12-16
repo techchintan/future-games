@@ -1,12 +1,12 @@
 import {CategoryBySlugQueryResult} from "@/sanity.types";
 import {sanityFetch} from "@/sanity/lib/live";
 import {categoryBySlugQuery} from "@/sanity/lib/queries";
+import CategoryHeader from "./_components/categoryHeader";
 import {redirect} from "next/navigation";
-import CategoryHeaderMobile from "./_components/categoryHeaderMobile";
-import Advertisement from "../../_components/advertisement";
-import Games from "../../_components/games";
+import Advertisement from "../../(home)/_components/advertisement";
+import HomeGames from "../../(home)/_components/games";
 
-const CategoryPage = async ({params}: {params: {slug: string}}) => {
+const CategoryRelatedgames = async ({params}: {params: any}) => {
   const {slug} = await params;
   const {data: categoryBySlug}: {data: CategoryBySlugQueryResult} = await sanityFetch({
     query: categoryBySlugQuery,
@@ -14,16 +14,16 @@ const CategoryPage = async ({params}: {params: {slug: string}}) => {
   });
 
   if (!categoryBySlug) {
-    redirect("category-not-found");
+    redirect("/category-not-found");
   }
 
   return (
-    <>
-      <CategoryHeaderMobile category={categoryBySlug} />
+    <div>
+      <CategoryHeader category={categoryBySlug} />
       <Advertisement />
-      <Games games={categoryBySlug.related_games} />
-    </>
+      <HomeGames games={categoryBySlug.related_games} />
+    </div>
   );
 };
 
-export default CategoryPage;
+export default CategoryRelatedgames;

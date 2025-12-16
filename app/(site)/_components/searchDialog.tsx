@@ -52,7 +52,7 @@ const SearchDialog = () => {
         className="gap-0 p-0"
         onCloseAutoFocus={() => {
           setSearchText("");
-          setSearchResult(null)
+          setSearchResult(null);
         }}
       >
         <DialogTitle className="hidden">Search for Game</DialogTitle>

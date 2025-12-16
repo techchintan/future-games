@@ -19,7 +19,7 @@ const Footer = ({
   return (
     <div>
       <div className="text-roboto border-y border-black/10">
-        <div className="max-width-container padding-container py-8">
+        <div className="max-width-container padding-container">
           <div className="flex flex-col items-start justify-between gap-10 md:flex-row">
             <div className="flex flex-col gap-4">
               <h3 className="mb-2 text-xl font-semibold">Resources</h3>
@@ -60,7 +60,7 @@ const Footer = ({
                 </Link>
               ))}
             </div>
-            <Link href='/contact-us'>
+            <Link href="/contact-us">
               <Button className="bg-btn-bg hover:bg-btn-bg h-11 cursor-pointer rounded-full text-sm font-semibold tracking-[1px] text-white uppercase">
                 Contact Us
               </Button>
@@ -68,7 +68,7 @@ const Footer = ({
           </div>
         </div>
       </div>
-      <div className="max-width-container padding-container flex flex-col items-center justify-between gap-2 py-4 md:flex-row">
+      <div className="max-width-container padding-container flex flex-col items-center justify-between gap-2 py-4! md:flex-row">
         <div className="flex gap-4">
           <Link href="https://www.facebook.com" target="_blank">
             <FacebookIcon />

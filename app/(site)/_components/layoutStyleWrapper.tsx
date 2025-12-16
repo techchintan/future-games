@@ -11,7 +11,7 @@ const LayoutStyleWrapper = ({children}: {children: ReactNode}) => {
     <div
       className={cn("no-scrollbar pt-[57px]", {
         "h-screen overflow-y-auto bg-[linear-gradient(25deg,var(--color-gradient-blue)_10%,var(--color-brand-pure-white)_45%)]":
-          pathname === "/",
+          pathname === "/" || pathname.startsWith("/category"),
       })}
     >
       {children}

@@ -21,7 +21,7 @@ const MobileFooter = () => {
       </div>
       <div className="border-border-color flex justify-between border-t p-2">
         <p>Privacy Policy</p>
-        <Link href='/'>qwiqgames.com</Link>
+        <Link href="/">qwiqgames.com</Link>
       </div>
     </div>
   );

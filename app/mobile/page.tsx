@@ -15,11 +15,11 @@ const HomePage = async () => {
 
   return (
     <>
-        <SearchBar />
-        <Advertisement />
-        <EarnCoin />
-        <CategoryCard categories={gamesCategories} />
-        <Games games={gamesData} />
+      <SearchBar />
+      <Advertisement />
+      <EarnCoin />
+      <CategoryCard categories={gamesCategories} />
+      <Games games={gamesData} />
     </>
   );
 };

@@ -33,7 +33,7 @@ const Header = () => {
 
   return (
     <div className="border-border-color fixed top-0 left-0 z-49 w-full border-b bg-white">
-      <div className="max-width-container padding-container flex h-full justify-between">
+      <div className="max-width-container padding-container flex h-full justify-between py-0!">
         <div className="py-2">
           <Link href="/" onClick={() => isOpen && setIsOpen(false)}>
             <Image

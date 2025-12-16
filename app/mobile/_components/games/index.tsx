@@ -19,7 +19,7 @@ const Games = ({
           <GameCard key={game._id} game={game} />
         ))}
       </div>
-      <Link href='/'>
+      <Link href="/">
         <Button className="bg-btn-bg hover:bg-btn-bg h-11 w-full cursor-pointer rounded-full tracking-[1px] text-white uppercase hover:brightness-90">
           More Games
         </Button>

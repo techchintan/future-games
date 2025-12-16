@@ -2,7 +2,7 @@ import Link from "next/link";
 
 function ContactUs() {
   return (
-    <div className="max-width-container padding-container py-8">
+    <div className="max-width-container padding-container">
       <article className="box relative bg-white">
         <h1 className="text-text-blue my-2 text-3xl font-semibold">Contact Us</h1>
 

@@ -45,7 +45,7 @@ const Sidebar = ({
             className="absolute top-[57px] left-0 z-2 h-screen w-full bg-white"
             style={{overflowY: "auto"}}
           >
-            <div className="padding-container container flex flex-col items-start justify-center gap-2 pt-8">
+            <div className="padding-container container flex flex-col items-start justify-center gap-2 pt-8! pb-0!">
               {(header_links || []).map((link) => (
                 <Link key={link.label} href={link.url} onClick={() => setIsOpen(false)}>
                   <span

@@ -15,7 +15,7 @@ const GameDetail = ({
 }) => {
   return (
     <div>
-      <div className="max-width-container padding-container flex flex-col pb-8">
+      <div className="max-width-container padding-container flex flex-col pt-0! pb-8">
         <div className="relative flex flex-col items-center gap-4 pt-8 pb-4">
           <BackgroundImage className="absolute top-0 z-0 h-full w-full object-cover" />
           <h1 className="z-1 text-center text-5xl font-semibold italic">{gameData.title}</h1>
