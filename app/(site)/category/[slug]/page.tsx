@@ -4,7 +4,7 @@ import {categoryBySlugQuery} from "@/sanity/lib/queries";
 import CategoryHeader from "./_components/categoryHeader";
 import {redirect} from "next/navigation";
 import Advertisement from "../../(home)/_components/advertisement";
-import HomeGames from "../../(home)/_components/games";
+import HomeGames from "../../_components/games";
 
 const CategoryRelatedgames = async ({params}: {params: any}) => {
   const {slug} = await params;

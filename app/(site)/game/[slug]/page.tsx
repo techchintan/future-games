@@ -2,7 +2,7 @@ import {GameBySlugQueryResult, GamesQueryResult} from "@/sanity.types";
 import {sanityFetch} from "@/sanity/lib/live";
 import {gameBySlugQuery, gamesQuery} from "@/sanity/lib/queries";
 import GameDetail from "./_components/gameDetail";
-import {notFound, redirect} from "next/navigation";
+import {redirect} from "next/navigation";
 
 const GamePage = async ({params}: {params: {slug: string}}) => {
   const {slug} = await params;

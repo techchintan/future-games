@@ -1,10 +1,11 @@
 import Advertisement from "@/app/(site)/(home)/_components/advertisement";
-import HomeGames from "@/app/(site)/(home)/_components/games";
+import HomeGames from "@/app/(site)/_components/games";
 import HeroTitle from "@/app/(site)/(home)/_components/heroTitle";
 import {SanityImage} from "@/components/common/image";
 import {Button} from "@/components/ui/button";
 import BackgroundImage from "@/icons/backgroundImage";
 import {GameBySlugQueryResult, GamesQueryResult} from "@/sanity.types";
+import Link from "next/link";
 
 const GameDetail = ({
   gameData,
@@ -28,11 +29,15 @@ const GameDetail = ({
               className="border-border-color z-1 border object-cover"
             />
           )}
+          <Link href={`/play/${gameData.game_slug?.current}`}>
           <Button className="bg-btn-bg hover:bg-btn-bg earn-coin-btn relative z-1 h-11 w-[300px] cursor-pointer overflow-hidden rounded-full tracking-[1px]">
-            <span>Start Game</span>
+            Start Game
           </Button>
+          </Link>
+          
         </div>
-        <Advertisement />
+
+        <Advertisement className="p-0! w-full"/>
         <div className="mt-4 flex flex-col gap-6">
           <p className="text-sm">{gameData.description}</p>
           <div className="flex gap-4">

@@ -15,7 +15,7 @@ import {GamesQueryResult} from "@/sanity.types";
 import {DialogClose, DialogTrigger} from "@radix-ui/react-dialog";
 import {Search} from "lucide-react";
 import {useEffect, useState} from "react";
-import GameCardHome from "../(home)/_components/games/gameCardHome";
+import GameCardHome from "./games/gameCardHome";
 import Link from "next/link";
 
 const SearchDialog = () => {
@@ -25,7 +25,7 @@ const SearchDialog = () => {
   useEffect(() => {
     const fetchData = async () => {
       if (!searchText.trim()) {
-        setSearchResult([]);
+        setSearchResult(null);
         return;
       }
       const response = await searchGameByName(searchText);
@@ -50,6 +50,10 @@ const SearchDialog = () => {
       <DialogContent
         showCloseButton={false}
         className="gap-0 p-0"
+        onOpenAutoFocus={() => {
+          setSearchText("");
+          setSearchResult(null);
+        }}
         onCloseAutoFocus={() => {
           setSearchText("");
           setSearchResult(null);

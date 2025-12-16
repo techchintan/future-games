@@ -1,6 +1,5 @@
 import {SanityImage} from "@/components/common/image";
 import {GamesQueryResult} from "@/sanity.types";
-import Link from "next/link";
 
 const GameCardHome = ({game}: {game: NonNullable<GamesQueryResult>[number]}) => {
   return (
