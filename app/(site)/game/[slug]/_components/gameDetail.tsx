@@ -30,14 +30,13 @@ const GameDetail = ({
             />
           )}
           <Link href={`/play/${gameData.game_slug?.current}`}>
-          <Button className="bg-btn-bg hover:bg-btn-bg earn-coin-btn relative z-1 h-11 w-[300px] cursor-pointer overflow-hidden rounded-full tracking-[1px]">
-            Start Game
-          </Button>
+            <Button className="bg-btn-bg hover:bg-btn-bg hover:brightness-90 earn-coin-btn relative z-1 h-11 w-[300px] cursor-pointer overflow-hidden rounded-full tracking-[1px]">
+              Start Game
+            </Button>
           </Link>
-          
         </div>
 
-        <Advertisement className="p-0! w-full"/>
+        <Advertisement className="w-full p-0!" />
         <div className="mt-4 flex flex-col gap-6">
           <p className="text-sm">{gameData.description}</p>
           <div className="flex gap-4">

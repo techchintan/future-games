@@ -20,7 +20,7 @@ const SearchBar = () => {
   }, [searchInput]);
 
   return (
-    <div>
+    <>
       <div className="px-4 py-3">
         <div className="border-border-color relative w-full rounded-2xl border">
           <input
@@ -50,7 +50,7 @@ const SearchBar = () => {
           )
         ) : null}
       </div>
-    </div>
+    </>
   );
 };
 

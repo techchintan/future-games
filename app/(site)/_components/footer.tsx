@@ -61,7 +61,7 @@ const Footer = ({
               ))}
             </div>
             <Link href="/contact-us">
-              <Button className="bg-btn-bg hover:bg-btn-bg h-11 cursor-pointer rounded-full text-sm font-semibold tracking-[1px] text-white uppercase">
+              <Button className="bg-btn-bg hover:bg-btn-bg hover:brightness-90 h-11 cursor-pointer rounded-full text-sm font-semibold tracking-[1px] text-white uppercase">
                 Contact Us
               </Button>
             </Link>

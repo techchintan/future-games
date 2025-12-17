@@ -42,7 +42,7 @@ const SearchDialog = () => {
       <DialogTrigger>
         <div
           role="button"
-          className="border-border-color flex size-8 cursor-pointer items-center justify-center rounded-full border"
+          className="border-border-color flex size-8 cursor-pointer items-center justify-center rounded-full border hover:bg-gray-100"
         >
           <SearchIcon color="black" />
         </div>
@@ -71,7 +71,7 @@ const SearchDialog = () => {
               onChange={(e) => setSearchText(e.target.value)}
             />
             <DialogClose asChild>
-              <Button className="bg-transprent h-6 w-8 cursor-pointer border border-gray-200 text-[12px] text-gray-500 hover:bg-transparent">
+              <Button className="bg-transprent h-6 w-8 cursor-pointer border border-gray-200 text-[12px] text-gray-500 hover:bg-gray-100">
                 esc
               </Button>
             </DialogClose>
